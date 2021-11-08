@@ -1,16 +1,10 @@
 import mongoose from 'mongoose'
 const Schema = mongoose.Schema
 
-const myDogSchema = new Schema ({
-  name: String,
-  breed: String,
-  favToy: [{type: Schema.Types.ObjectId, ref: ""}]
-
-})
-
-const profileSchema = new mongoose.Schema({
+const profileSchema = new Schema({
   name: String,
   avatar: String,
+  dogs : [{type: Schema.Types.ObjectId, ref: "Dog"}]
 }, {
   timestamps: true
 })
