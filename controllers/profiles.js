@@ -40,5 +40,6 @@ function create(req,res) {
 export {
   index,
   show,
-  newDog as new
+  newDog as new,
+  create
 }
