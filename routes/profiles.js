@@ -7,9 +7,6 @@ router.get('/', isLoggedIn, profilesCtrl.index)
 
 router.get('/:id', isLoggedIn, profilesCtrl.show)
 
-router.get('/new', isLoggedIn, profilesCtrl.new)
-
-router.post('/:id', isLoggedIn, profilesCtrl.create)
 
 function isLoggedIn(req, res, next) {
   if (req.isAuthenticated()) return next();

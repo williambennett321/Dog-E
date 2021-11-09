@@ -2,9 +2,9 @@ import mongoose from 'mongoose'
 const Schema = mongoose.Schema
 
 const myDogSchema = new Schema ({
-  name: String, required: true,
-  breed: String, required: true,
-  favToy: String, required: true,
+  name: { type: String, required: true },
+  breed: { type: String, required: true },
+  favToy: { type: String, required: true },
   favPlace:[{type: Schema.Types.ObjectId, ref: "favPlace"}]
 
 })

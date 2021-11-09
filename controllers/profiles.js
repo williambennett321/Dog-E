@@ -28,18 +28,7 @@ function show(req, res) {
   })
 }
 
-function newDog(req,res) {
-res.render("profiles/new", {
-  title: "Add New Dog"
-  })
-}
-
-function create(req,res) {
-}
-
 export {
   index,
   show,
-  newDog as new,
-  create
 }
