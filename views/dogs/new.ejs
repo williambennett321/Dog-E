@@ -1,6 +1,18 @@
 <%- include('../partials/html-head') %>
 <%- include('../partials/nav') %>
 <h2> Dog Info:</h2>
-<form></form>
+<form action="/dogs/new" method="POST">
+  <input name="name" type="text" placeholder="dog's name">
+  <br>
+  <input name="breed" type="text" placeholder="dog's breed">
+  <br>
+  <input name="favToy" type="text" placeholder="dog's favorite toy">
+  <br>
+  <input name="favPlace" type="text" placeholder="dog's favorite place">
+  <a href = "/dogs/new"><button type="submit">Add dog</button></a>
+
+</form>
+
+
 <%- include('../partials/footer') %>
 

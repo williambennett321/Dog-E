@@ -12,6 +12,8 @@ function index(req,res) {
 
 function show(req, res) {
   Profile.findById(req.params.id)
+  .populate('dogs')
+  .populate('favPlace')
   .then((profile) => {
     Profile.findById(req.user.profile)
     .then(userProfile => {

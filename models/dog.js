@@ -1,15 +1,14 @@
 import mongoose from 'mongoose'
 const Schema = mongoose.Schema
 
-const myDogSchema = new Schema ({
+const DogSchema = new Schema ({
   name: { type: String, required: true },
-  breed: { type: String, required: true },
-  favToy: { type: String, required: true },
-  favPlace:[{type: Schema.Types.ObjectId, ref: "favPlace"}]
+  breed: { type: String },
+  favToy: { type: String },
 
 })
 
-const Dog = mongoose.model('myDog', myDogSchema)
+const Dog = mongoose.model('Dog', DogSchema)
 
 export {
   Dog
