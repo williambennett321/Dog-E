@@ -14,10 +14,12 @@
   <h3> Name: <%= dog.name %> </h2>
   <h3> Breed: <%= dog.breed %> </h2>
   <h3> Favorite Toy: <%= dog.favToy %> </h3>
-<a href=""><button></button></a>
+<form action="/profiles/<%= profile._id %>" method="POST">
+
+</form>
   
 <% }) %>
- <% } %>
+<% } %>
 
 
 <%- include('../partials/footer') %>
