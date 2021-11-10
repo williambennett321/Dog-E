@@ -4,7 +4,7 @@ const Schema = mongoose.Schema
 const profileSchema = new Schema({
   name: String,
   avatar: String,
-  dogs: [{type: Schema.Types.ObjectId, ref: "Profile"}]
+  dogs: [{type: Schema.Types.ObjectId, ref: "Dog"}]
 }, {
   timestamps: true
 })
