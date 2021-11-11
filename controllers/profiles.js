@@ -1,4 +1,6 @@
 import { Profile } from "../models/profile.js"
+import { Dog } from "../models/dog.js"
+import { FavPlace } from "../models/dog.js"
 
 function index(req,res) {
   Profile.find({})
@@ -29,7 +31,28 @@ function show(req, res) {
   })
 }
 
+function create (req,res) {
+  Dog.findById(req.body.dogId)
+  .then(dog => {
+    console.log(req.body.name)
+    console.log(dog.favPlace)
+    dog.favPlace.push(req.body)
+    dog.save()
+    .then(() => {
+      res.redirect(`/profiles/${req.user.profile._id}`)
+        })
+      })
+    }
+
+    
+  
+
+  
+  
+
+
 export {
   index,
   show,
+  create
 }

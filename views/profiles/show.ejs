@@ -14,12 +14,24 @@
   <h3> Name: <%= dog.name %> </h2>
   <h3> Breed: <%= dog.breed %> </h2>
   <h3> Favorite Toy: <%= dog.favToy %> </h3>
-<form action="/profiles/<%= profile._id %>" method="POST">
 
+  <form action="/profiles/<%= profile._id %>/favPlace" method="POST">
+  <h3>Favorite Place:</h3>
+  <input name="name" placeholder= "Dog's favorite Place"> 
+  <input name="dogId" hidden value="<%= dog._id %>"> 
+  <button type="submit">add Dog's Favorite Place</button>
 </form>
+
+
+  <% profile.dogs.forEach( dog => { %>
+    <div> I like <%= dog.favPlace %> </div>
   
-<% }) %>
-<% } %>
+      <% }) %>
+    <% }) %>
+  <% } %>
+
+
+
 
 
 <%- include('../partials/footer') %>

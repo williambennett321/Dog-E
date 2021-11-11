@@ -23,8 +23,7 @@ import { router as authRouter } from './routes/auth.js'
 import { router as profilesRouter} from './routes/profiles.js'
 import { passUserToView } from './middleware/middleware.js'
 import { router as dogsRouter} from './routes/dogs.js'
-import { router as favPlaceRouter}
-from './routes/favPlace.js'
+
 
 // view engine setup
 app.set(
@@ -67,7 +66,7 @@ app.use('/', indexRouter)
 app.use('/auth', authRouter)
 app.use('/profiles', profilesRouter)
 app.use('/dogs', dogsRouter)
-app.use('/favPlace', favPlaceRouter)
+
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

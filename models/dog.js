@@ -2,7 +2,7 @@ import mongoose from 'mongoose'
 const Schema = mongoose.Schema
 
 const favPlaceSchema = new Schema ({
-  name: {type: String},
+  name: {type: String}
   
 })
 
@@ -17,7 +17,9 @@ const DogSchema = new Schema ({
 
 
 const Dog = mongoose.model('Dog', DogSchema)
+const FavPlace = mongoose.model('FavPlace', favPlaceSchema)
 
 export {
-  Dog
+  Dog,
+  FavPlace
 }
