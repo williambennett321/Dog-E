@@ -1,6 +1,17 @@
 import { Dog } from '../models/dog.js'
 import { Profile } from '../models/profile.js'
 
+function index(req,res) {
+  Dog.find({}, function(err, dogs) {
+  res.render("dogs", {
+    dogs,
+    title: "All Dogs"
+    })
+  })
+}
+
+
+
 function newDogPage(req, res) {
   Dog.find({}, function (err, dogs) {
     res.render("dogs/new", {
@@ -26,9 +37,17 @@ function create(req, res) {
   })
   //redirect to profile
 }
+
+function show(req,res) {
+  Dog.findById(req.params.id)
+  .populate("dogs")
+}
+
 export {
+  index,
   newDogPage as new,
-  create
+  create,
+  show
 }
 
 

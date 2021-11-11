@@ -30,20 +30,6 @@ function show(req, res) {
     res.redirect("/")
   })
 }
-
-function create (req,res) {
-  Dog.findById(req.body.dogId)
-  .then(dog => {
-    console.log(req.body.name)
-    console.log(dog.favPlace)
-    dog.favPlace.push(req.body)
-    dog.save()
-    .then(() => {
-      res.redirect(`/profiles/${req.user.profile._id}`)
-        })
-      })
-    }
-
     
   
 
@@ -54,5 +40,4 @@ function create (req,res) {
 export {
   index,
   show,
-  create
 }

@@ -4,32 +4,6 @@
 <h2 id="profileName"> <%= profile.name %> </h2>
 <img id="profileAv" src="<%= profile.avatar %>"  alt="No Image">
 
-<div class="dog-entry">
-<button > <a class="text-decoration-none" href="/dogs/new"> Add a Dog!</a></button>
-</div>
-
-<% if (profile.dogs) { %>
-<% profile.dogs.forEach(dog => { %>
-  <h2>Dog:</h2>
-  <h3> Name: <%= dog.name %> </h2>
-  <h3> Breed: <%= dog.breed %> </h2>
-  <h3> Favorite Toy: <%= dog.favToy %> </h3>
-
-  <form action="/profiles/<%= profile._id %>/favPlace" method="POST">
-  <h3>Favorite Place:</h3>
-  <input name="name" placeholder= "Dog's favorite Place"> 
-  <input name="dogId" hidden value="<%= dog._id %>"> 
-  <button type="submit">add Dog's Favorite Place</button>
-</form>
-
-
-  <% profile.dogs.forEach( dog => { %>
-    <div> I like <%= dog.favPlace %> </div>
-  
-      <% }) %>
-    <% }) %>
-  <% } %>
-
 
 
 

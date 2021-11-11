@@ -1,0 +1,18 @@
+<%- include('../partials/html-head') %>
+<%- include('../partials/nav') %>
+</head>
+<body>
+  <h2><%= title %> </h2>
+
+  <div class="dog-entry">
+    <button > <a class="text-decoration-none" href="/dogs/new"> Add a Dog!</a></button>
+    </div>
+    
+    
+  <% dogs.forEach((dog) => { %>
+    <li> Name: <%= dog.name %></li>
+    <li> Breed: <%= dog.breed %></li>
+    <li> favToy: <%= dog.favToy %></li>
+    <a href="/dogs/<%= dog._id %>">DETAILS</a>
+    <% }) %>
+    <%- include('../partials/footer') %>
