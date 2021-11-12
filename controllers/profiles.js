@@ -1,6 +1,6 @@
 import { Profile } from "../models/profile.js"
 import { Dog } from "../models/dog.js"
-import { FavPlace } from "../models/dog.js"
+import { FavPlace } from "../models/favPlace.js"
 
 function index(req,res) {
   Profile.find({})

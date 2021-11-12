@@ -1,25 +1,20 @@
 import mongoose from 'mongoose'
 const Schema = mongoose.Schema
 
-const favPlaceSchema = new Schema ({
-  name: {type: String}
-  
-})
+
 
 const DogSchema = new Schema ({
   name: { type: String, required: true },
   breed: { type: String },
   favToy: { type: String },
-  favPlace : [favPlaceSchema]
+  favPlace : {type: mongoose.Schema.Types.ObjectId, ref: "FavPlace"}
 
 })
 
 
 
 const Dog = mongoose.model('Dog', DogSchema)
-const FavPlace = mongoose.model('FavPlace', favPlaceSchema)
 
 export {
-  Dog,
-  FavPlace
+  Dog
 }

@@ -1,6 +1,14 @@
 <%- include('../partials/html-head') %>
 <%- include('../partials/nav') %>
 
-<h2>Show Page</h2>
+<h2><strong><%= title %></strong> </h2>
+<h3> Breed : <%= dog.breed %> </h3>
+<h3> Favorite Toy:  <%= dog.favToy %> </h3>
+<h3> Favorite Place: </h3>
+<ul>
+  <%- dog.favPlace.map( fp => `<li>${dog.favPlace}</li>`).join("") %>
+</ul>
+
+<form action="/dogs/<%= dog._id %>/favPlace" method="POST"
 
 <%- include('../partials/footer') %>

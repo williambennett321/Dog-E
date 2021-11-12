@@ -40,7 +40,15 @@ function create(req, res) {
 
 function show(req,res) {
   Dog.findById(req.params.id)
-  .populate("dogs")
+  .then(dog => {
+    res.render("dogs/show", {
+      title: dog.name,
+      dog
+    })
+  })
+
+
+
 }
 
 export {
