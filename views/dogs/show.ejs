@@ -5,17 +5,8 @@
   <h2><strong><%= title %></strong> </h2>
   <h3> Breed : <%= dog.breed %> </h3>
   <h3> Favorite Toy:  <%= dog.favToy %> </h3>
-  <h3> Favorite Place: </h3>
+  <a href="/favPlaces/new"><button>Add Favorite Place</button></a>
 
-<% if (dog.favPlaces.length) {%> 
-  <ul>
-    <% dog.favPlaces.map( fp => `<li>${fp.name}</li>`).join("") %>
-  </ul>
-<% } %> 
 
-<form action="/dogs/<%= dog._id %>" method="POST">
-<input name="favPlaceId" placeholder="Favorite Place">
-<button type="submit" >Add</button>
-</form>
 
 <%- include('../partials/footer') %>

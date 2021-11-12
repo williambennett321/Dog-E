@@ -1,0 +1,11 @@
+<%- include('../partials/html-head') %>
+<%- include('../partials/nav') %>
+  <title><%= title %> </title>
+</head>
+<body>
+  <h2>Add your Dog's favorite place</h2>
+<form action="/favPlaces" method="POST">
+  <input type="text" name="name">
+  <button type="submit"> Add favPlace </button>
+</form>
+<%- include('../partials/footer') %>
