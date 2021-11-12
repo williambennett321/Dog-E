@@ -28,7 +28,7 @@ function create(req, res) {
         profile.dogs.push(dog._id)
         profile.save()
         .then (() => {
-          res.redirect(`/profiles/${profile._id}`)
+          res.redirect(`/dogs`)
         })
       })
   }) .catch(err => {
@@ -46,16 +46,31 @@ function show(req,res) {
       dog
     })
   })
+}
 
+function postPlace (req,res) {
+Dog.findById(req.params.id)
+.then(dog => {
+  dog.favPlaces.push(req.body.favPlaceId)
+  dog.save(function(err) {
+    res.redirect(`/dogs/${dog._id}`)
+    })
+  })
+}
 
-
+function deleteDog (req,res) {
+  Dog.findByIdAndDelete(req.params.id, function(err, dog) {
+    res.redirect("/dogs")
+    })
 }
 
 export {
   index,
   newDogPage as new,
   create,
-  show
+  show,
+  postPlace,
+  deleteDog as delete
 }
 
 

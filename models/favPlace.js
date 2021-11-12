@@ -2,7 +2,8 @@ import mongoose from 'mongoose'
 const Schema = mongoose.Schema
 
 const favPlaceSchema = new Schema ({
-  name: String
+  name: String,
+  dogs : [{type: Schema.Types.ObjectId, ref: "FavPlace"}]
   
 })
 

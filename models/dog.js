@@ -7,7 +7,7 @@ const DogSchema = new Schema ({
   name: { type: String, required: true },
   breed: { type: String },
   favToy: { type: String },
-  favPlace : {type: mongoose.Schema.Types.ObjectId, ref: "FavPlace"}
+  favPlaces : [{type: mongoose.Schema.Types.ObjectId, ref: "FavPlace"}]
 
 })
 

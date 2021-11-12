@@ -1,14 +1,21 @@
 <%- include('../partials/html-head') %>
 <%- include('../partials/nav') %>
 
-<h2><strong><%= title %></strong> </h2>
-<h3> Breed : <%= dog.breed %> </h3>
-<h3> Favorite Toy:  <%= dog.favToy %> </h3>
-<h3> Favorite Place: </h3>
-<ul>
-  <%- dog.favPlace.map( fp => `<li>${dog.favPlace}</li>`).join("") %>
-</ul>
 
-<form action="/dogs/<%= dog._id %>/favPlace" method="POST"
+  <h2><strong><%= title %></strong> </h2>
+  <h3> Breed : <%= dog.breed %> </h3>
+  <h3> Favorite Toy:  <%= dog.favToy %> </h3>
+  <h3> Favorite Place: </h3>
+
+<% if (dog.favPlaces.length) {%> 
+  <ul>
+    <% dog.favPlaces.forEach( fp => `<li>${fp.name}</li>`) %>
+  </ul>
+<% } %> 
+
+<form action="/dogs/<%= dog._id %>" method="POST">
+<input name="favPlaceId" placeholder="Favorite Place">
+<button type="submit" >Add</button>
+</form>
 
 <%- include('../partials/footer') %>

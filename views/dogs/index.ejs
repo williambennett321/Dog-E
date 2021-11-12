@@ -10,9 +10,12 @@
     
     
   <% dogs.forEach((dog) => { %>
+    <form action="/dogs/<%= dog._id %>?_method=DELETE" method="POST">
     <li> Name: <%= dog.name %></li>
     <li> Breed: <%= dog.breed %></li>
     <li> favToy: <%= dog.favToy %></li>
     <a href="/dogs/<%= dog._id %>">DETAILS</a>
+    <button type="submit">Delete Dog</button>
+  </form>
     <% }) %>
     <%- include('../partials/footer') %>

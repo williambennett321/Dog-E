@@ -1,0 +1,1 @@
+import { FavPlace } from "../models/favPlace.js"
