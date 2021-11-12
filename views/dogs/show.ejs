@@ -9,7 +9,7 @@
 
 <% if (dog.favPlaces.length) {%> 
   <ul>
-    <% dog.favPlaces.forEach( fp => `<li>${fp.name}</li>`) %>
+    <% dog.favPlaces.map( fp => `<li>${fp.name}</li>`).join("") %>
   </ul>
 <% } %> 
 

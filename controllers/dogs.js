@@ -1,4 +1,5 @@
 import { Dog } from '../models/dog.js'
+import { FavPlace } from '../models/favPlace.js'
 import { Profile } from '../models/profile.js'
 
 function index(req,res) {
@@ -50,10 +51,14 @@ function show(req,res) {
 
 function postPlace (req,res) {
 Dog.findById(req.params.id)
+.populate("favPlaces")
 .then(dog => {
+  FavPlace.find({_id: {$nin: dog.favPlaces}},
+    function(err, favPlaces) {
   dog.favPlaces.push(req.body.favPlaceId)
   dog.save(function(err) {
     res.redirect(`/dogs/${dog._id}`)
+      })
     })
   })
 }
