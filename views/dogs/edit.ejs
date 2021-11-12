@@ -1,0 +1,14 @@
+<%- include('../partials/html-head') %>
+<%- include('../partials/nav') %>
+<h1><%= title %></h1>
+<form action="/dogs/<%= dog._id %>?_method=PUT" method="POST">
+  <input name="name" type="text" placeholder="<%= dog.name %> ">
+  <br>
+  <input name="breed" type="text" placeholder="<%= dog.breed %> ">
+  <br>
+  <input name="favToy" type="text" placeholder="<%= dog.favToy %> ">
+  <br>
+  <a href = "/dogs"><button type="submit">Update Dog</button></a>
+
+</form>
+<%- include('../partials/footer') %>

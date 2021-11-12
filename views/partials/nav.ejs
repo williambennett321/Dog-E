@@ -5,17 +5,23 @@
 <body>
   <nav>
     <% if (user) { %>
-      <a href="/">
-        <button type="submit">Home</button>
-      </a>
-      <a href="/dogs"><button type="submit">My Dogs</button></a>
-      <a href="/favPlaces/new"><button type="submit"> Dog's favorite place</button></a>
-      <a href="/profiles">
-        <button type="submit">Users</button>
-      </a>
-      <a href="/auth/logout">
-        <button type="submit">Logout</button>
-      </a>
+      
+      <nav class="navbar navbar-light bg-light">
+        <div class="container">
+          <a class="navbar-brand" href="/">
+            <img src="https://static.vecteezy.com/system/resources/thumbnails/000/620/693/small/15-22.jpg" alt="" width="30" height="24">
+          </a>
+          <a href="/dogs" ><button type="submit">My Dogs</button></a>
+          <a href="/favPlaces/new"><button type="submit"> Dog's favorite place</button></a>
+          <a href="/profiles/<%= user.profile._id %> ">
+            <button type="submit">My Profile</button>
+          </a>
+          <a href="/auth/logout">
+            <button type="submit">Logout</button>
+          </a>
+        </div>
+
+      </nav>
       
       
     <% } else { %>

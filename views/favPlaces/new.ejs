@@ -8,4 +8,12 @@
   <input type="text" name="name">
   <button type="submit"> Add favPlace </button>
 </form>
+
+<h3> Dog's Favorite Places: </h3>
+  <h4>
+    <% favPlaces.forEach(favPlace => { %>
+      <p> favPlace : <%= favPlace.name %> </p>
+    <% }) %> 
+
+    </h4>
 <%- include('../partials/footer') %>

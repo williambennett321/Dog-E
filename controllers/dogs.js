@@ -57,12 +57,30 @@ function deleteDog (req,res) {
     })
 }
 
+function edit (req,res) {
+  Dog.findById(req.params.id, function(err, dog) {
+    res.render(`dogs/edit`, {
+      dog,
+      err,
+      title: "Edit Dog"
+    })
+  })
+}
+
+function update(req,res) {
+  Dog.findByIdAndUpdate(req.params.id, req.body, function(err, dog) {
+    res.redirect(`/dogs/${dog._id}`)
+  })
+}
+
 export {
   index,
   newDogPage as new,
   create,
   show,
-  deleteDog as delete
+  deleteDog as delete,
+  edit,
+  update
 }
 
 

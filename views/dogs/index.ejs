@@ -16,6 +16,8 @@
     <li> favToy: <%= dog.favToy %></li>
     <a href="/dogs/<%= dog._id %>">DETAILS</a>
     <button type="submit">Delete Dog</button>
-  </form>
+    <br>
+    </form>
+    <a href="/dogs/<%= dog._id %>/edit"><button>Edit Info</button></a>
     <% }) %>
     <%- include('../partials/footer') %>

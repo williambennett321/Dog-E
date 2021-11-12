@@ -7,6 +7,8 @@ router.get("/new", isLoggedIn, dogsCtrl.new)
 router.post("/new", isLoggedIn, dogsCtrl.create)
 router.get("/:id", isLoggedIn, dogsCtrl.show)
 router.delete("/:id", dogsCtrl.delete)
+router.get("/:id/edit", dogsCtrl.edit)
+router.put("/:id", dogsCtrl.update)
 
 function isLoggedIn(req, res, next) {
   if (req.isAuthenticated()) return next();
