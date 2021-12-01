@@ -21,3 +21,7 @@ Project Management:
 + Bootstrap
 
 # Next Steps:
+
+1. Refactor functionality for individual profiles
+2. include functionality that allows for profiles to show each other their dogs
+3. Style the application to give more of a interesting layout
