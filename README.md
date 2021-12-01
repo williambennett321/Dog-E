@@ -9,7 +9,8 @@ Project Management:
 [Trello](https://trello.com/b/DkSuBU5I/dog-e)
 
 # Screenshot of Application
-![image](https://imgur.com/a/SNlEcUN)
+
+![image](https://i.imgur.com/m5XzbVb.png)
 
 # Technology: 
 
